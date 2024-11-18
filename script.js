@@ -22,17 +22,24 @@ const emails = [
   'prova@gmail.com',
   'giuseppe@gmail.com'
 ]
-let isEmailPresent = false
+let isEmailPresent = false, isEmailValid = false;
 let pcNum, playerNum;
 let message;
 let email;
 
-while (!isEmailPresent) {
+// Espressione regolare per validare un'email (trovata su stack overflow)
+const re =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+while (!isEmailPresent || !isEmailValid) {
   email = prompt('Inserisci la tua email.');
 
   isEmailPresent = emails.includes(email);
+  isEmailValid = email.toLowerCase().match(re);
 
-  if (!isEmailPresent) {
+  if (!isEmailValid) {
+    console.log('La mail che hai inserito non e\' valida.')
+  } else if (!isEmailPresent) {
     console.log('La mail che hai inserito non e\' registrata.');
   }
 }

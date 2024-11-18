@@ -14,3 +14,22 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
     - Se e' registrata, vado avanti
     - Altrimenti la richiedo
 */
+
+emails = [
+  'ciao@gmail.com',
+  'prova@gmail.com',
+  'giuseppe@gmail.com'
+]
+let isEmailPresent = false
+
+while (!isEmailPresent) {
+  email = prompt('Inserisci la tua email.');
+
+  isEmailPresent = emails.includes(email);
+
+  if (!isEmailPresent) {
+    console.log('La mail che hai inserito non e\' registrata.');
+  }
+}
+
+console.log('Login effettuato con successo.');

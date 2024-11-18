@@ -17,7 +17,7 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
   5. Stabilisco il vincitore in base alla generazione
 */
 
-emails = [
+const emails = [
   'ciao@gmail.com',
   'prova@gmail.com',
   'giuseppe@gmail.com'
@@ -25,6 +25,7 @@ emails = [
 let isEmailPresent = false
 let pcNum, playerNum;
 let message;
+let email;
 
 while (!isEmailPresent) {
   email = prompt('Inserisci la tua email.');

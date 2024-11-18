@@ -13,6 +13,8 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
   3. Verifico che l'email sia registrata
     - Se e' registrata, vado avanti
     - Altrimenti la richiedo
+  4. Genero due numeri casuali da 1 a 6
+  5. Stabilisco il vincitore in base alla generazione
 */
 
 emails = [
@@ -21,6 +23,8 @@ emails = [
   'giuseppe@gmail.com'
 ]
 let isEmailPresent = false
+let pcNum, playerNum;
+let message;
 
 while (!isEmailPresent) {
   email = prompt('Inserisci la tua email.');
@@ -33,3 +37,21 @@ while (!isEmailPresent) {
 }
 
 console.log('Login effettuato con successo.');
+console.log('=================================')
+console.log('Benvenuto nel gioco dei dadi.')
+
+pcNum = Math.ceil(Math.random() * 6);
+playerNum = Math.ceil(Math.random() * 6);
+
+console.log(`Il computer ha giocato ${pcNum}`);
+console.log(`Hai giocato ${playerNum}`);
+
+if (pcNum > playerNum) {
+  message = 'Hai perso!';
+} else if (playerNum > pcNum) {
+  message = 'Hai vinto!';
+} else {
+  message = 'Patta!';
+}
+
+console.log(message);
